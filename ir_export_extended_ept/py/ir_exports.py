@@ -1,11 +1,7 @@
 import base64
 import datetime
-from openerp.osv import osv
-from openerp.addons.web import http
 from openerp.exceptions import except_orm, Warning
-import openerp.addons.web.http as oeweb
 from openerp import models, fields, api, _
-import openerp
 from operator import attrgetter
 try:
     import xlwt
@@ -133,7 +129,7 @@ class ir_exports( models.Model ):
                 }
 
         else:
-            raise osv.except_osv( _( 'Attachment not found !' ), _( 'There is no last export for this record.' ) )
+            raise except_orm( _( 'Attachment not found !' ), _( 'There is no last export for this record.' ) )
 
     @api.multi
     def export_and_send( self ):

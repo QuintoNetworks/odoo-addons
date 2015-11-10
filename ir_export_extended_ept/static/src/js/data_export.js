@@ -1,5 +1,11 @@
-openerp.ir_export_extended_ept = function(instance) {
-	instance.web.DataExport.include({	
+odoo.define('ir_export_extended_ept.DataExport', function (require) {
+"use strict";
+
+var core = require('web.core');
+var data = require('web.data');
+var DataExport = require('web.DataExport');
+
+	DataExport.include({
 		
 	    do_save_export_list: function(value) {
 	        var self = this;
@@ -41,4 +47,4 @@ openerp.ir_export_extended_ept = function(instance) {
 	    },
 	    
 	});
-};
+});
